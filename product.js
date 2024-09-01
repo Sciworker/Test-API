@@ -7,7 +7,9 @@ async function getProductDetails(url) {
   let container = document.querySelector("#productContainer");
   container.innerHTML = `
       <div class="card mx-auto w-100" style="max-width: 100%;">
-      <img src="https://faktura.by/${product.data.img}" class="card-img-top" alt="${product.data.title}">
+      <div class="big-foto">
+       <img src="https://faktura.by/${product.data.img}" style="width: auto; height: 200px;" alt="${product.data.title}">
+      </div>
       <div class="card-body">
         <h5 class="card-title">${product.data.title}</h5>
         <p class="card-text">${product.data.description}</p>

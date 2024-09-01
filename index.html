@@ -13,6 +13,12 @@
 </head>
 
 <body>
+  <header>
+    <a class="header-link p-2" href="#">Главная</a>
+    <a class="header-link p-2" href="/about-us.html">О нас</a>
+    <a class="header-link p-2" href="/order-form.html">Отправить заявку</a>
+  </header>
+
   <div class="slider" id="slider">
     <div class="slides" id="slides">
       <div class="slide">
@@ -28,6 +34,17 @@
     <div class="slider-nav">
       <button id="prevBtn">&#10094;</button>
       <button id="nextBtn">&#10095;</button>
+    </div>
+  </div>
+
+  <div id="popup" class="popup">
+    <button id="closePopup">&times;</button>
+    <div class="popup-content">
+      <img id="popupImage" src="" alt="Просмотр изображения">
+      <div class="popup-nav">
+        <button id="popupPrevBtn">&#10094;</button>
+        <button id="popupNextBtn">&#10095;</button>
+      </div>
     </div>
   </div>
 

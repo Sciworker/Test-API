@@ -48,3 +48,49 @@ prevBtn.addEventListener('click', () => {
 nextBtn.addEventListener('click', () => {
   showSlide(currentIndex + 1);
 });
+
+// Popup functionality
+const popup = document.getElementById('popup');
+const popupImage = document.getElementById('popupImage');
+const closePopup = document.getElementById('closePopup');
+const popupPrevBtn = document.getElementById('popupPrevBtn');
+const popupNextBtn = document.getElementById('popupNextBtn');
+
+slides.addEventListener('click', (e) => {
+  if (e.target.tagName === 'IMG') {
+    popup.style.display = 'flex';
+    currentIndex = Array.from(slides.children).indexOf(e.target.parentElement);
+    showPopupSlide(currentIndex);
+  }
+});
+
+function showPopupSlide(index) {
+  const totalSlides = slides.children.length;
+  if (index >= totalSlides) {
+    currentIndex = 0;
+  } else if (index < 0) {
+    currentIndex = totalSlides - 1;
+  } else {
+    currentIndex = index;
+  }
+  const imgElement = slides.children[currentIndex].querySelector('img');
+  popupImage.src = imgElement.src;
+}
+
+closePopup.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
+
+popupPrevBtn.addEventListener('click', () => {
+  showPopupSlide(currentIndex - 1);
+});
+
+popupNextBtn.addEventListener('click', () => {
+  showPopupSlide(currentIndex + 1);
+});
+
+popup.addEventListener('click', (e) => {
+  if (e.target === popup) {
+    popup.style.display = 'none';
+  }
+});
